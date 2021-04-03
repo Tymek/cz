@@ -4,6 +4,7 @@ import EnvelopeIcon from './assets/envelope.svg'
 import BuildIcon from './assets/build.svg'
 import LinkIcon from './assets/link.svg'
 import Button from './components/Button'
+import useTheme from 'hooks/useTheme'
 
 const messages = {
   description: [
@@ -30,6 +31,7 @@ const translations = {
 }
 
 const AboutMe = () => {
+  const theme = useTheme()
   const translate = useTranslation(messages, translations)
 
   return (
@@ -82,15 +84,14 @@ const AboutMe = () => {
         .title {
           font-size: 4.188036796rem;
           line-height: 1.2em;
-          /* text-transform: uppercase; */
           font-weight: 700;
-          color: #253854;
+          color: ${theme.colors.foreground};
           margin: 0 0 2rem;
         }
 
         .description {
           padding-bottom: 1.11646975rem;
-          color: #4b3445;
+          color: ${theme.colors.text};
           font-size: 1.11646975rem;
           line-height: 1.6em;
         }

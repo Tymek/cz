@@ -4,8 +4,10 @@ module.exports = {
     defaultLocale: 'en-US',
     localeDetection: true,
   },
+  env: {
+    BUILD_TIMESTAMP: Date.now().toString(),
+  },
   webpack(config, options) {
-    console.log(options.defaultLoaders.babel)
     config.module.rules.push({
       test: /\.svg$/,
       issuer: {

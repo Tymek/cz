@@ -6,16 +6,17 @@ const AlternativeLocales = () => {
 
   return (
     <Head>
-      {locales
-        .filter((lang) => lang !== locale)
-        .map((lang) => (
-          <link
-            key={lang}
-            rel="alternate"
-            hrefLang={lang}
-            href={lang !== defaultLocale ? `/${lang}${asPath}` : asPath}
-          />
-        ))}
+      {locales &&
+        locales
+          .filter((lang) => lang !== locale)
+          .map((lang) => (
+            <link
+              key={lang}
+              rel="alternate"
+              hrefLang={lang}
+              href={lang !== defaultLocale ? `/${lang}${asPath}` : asPath}
+            />
+          ))}
     </Head>
   )
 }

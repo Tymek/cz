@@ -1,4 +1,5 @@
 dependencies:
+  date-fns: 2.19.0
   next: 10.0.9_19437c2f9b137c4ee9c416360487a7aa
   ramda: 0.27.1
   react: 17.0.2
@@ -2605,6 +2606,12 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-X5eWTSXO/BJmpdIKCRuKUgSCgAN0OwliVK3yPKbwIWU1Tdw5BRajxlzMidvh+gwko9AfQ9zIj52pzF91Q3YAvQ==
+  /date-fns/2.19.0:
+    dev: false
+    engines:
+      node: '>=0.11'
+    resolution:
+      integrity: sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -6663,6 +6670,7 @@ specifiers:
   '@types/jest': 26.0.22
   '@types/node': 14.14.37
   '@types/react': 17.0.3
+  date-fns: ^2.19.0
   jest: 26.6.3
   next: 10.0.9
   ramda: 0.27.1
