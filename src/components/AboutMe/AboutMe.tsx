@@ -1,10 +1,10 @@
-import { Fragment } from 'react'
+import { FC, Fragment } from 'react'
 import useTranslation from 'hooks/useTranslation'
+import useTheme from 'hooks/useTheme'
 import EnvelopeIcon from './assets/envelope.svg'
 import BuildIcon from './assets/build.svg'
 import LinkIcon from './assets/link.svg'
 import Button from './components/Button'
-import useTheme from 'hooks/useTheme'
 
 const messages = {
   description: [
@@ -30,7 +30,7 @@ const translations = {
   },
 }
 
-const AboutMe = () => {
+const AboutMe: FC = () => {
   const theme = useTheme()
   const translate = useTranslation(messages, translations)
 

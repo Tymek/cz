@@ -16,6 +16,7 @@ export const resolver = () => ({
 })
 
 export const selector = (
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   state?: { spotify?: SpotifyProps } & Record<string, any>,
 ) => ({
   ...state?.spotify,

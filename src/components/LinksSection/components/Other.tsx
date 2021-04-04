@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+import { format, formatDistance } from 'date-fns'
 import useTranslation from 'hooks/useTranslation'
 import Block from './Block'
 import { useRouter } from 'next/router'
@@ -24,7 +24,7 @@ const Other: FC<OtherProps> = ({ buildTimestamp }) => {
   const { locale } = useRouter()
   const theme = useTheme()
   const translate = useTranslation(messages, translations)
-  const timestamp = parseInt(buildTimestamp, 10)
+  const timestamp = Number.parseInt(buildTimestamp, 10)
   const dateLocale = locale === 'pl' ? pl : enUS
 
   return (
@@ -45,6 +45,7 @@ const Other: FC<OtherProps> = ({ buildTimestamp }) => {
   )
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const selector = (state: OtherProps & Record<string, any>) => ({
   buildTimestamp: state?.buildTimestamp,
 })

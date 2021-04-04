@@ -7,7 +7,7 @@ module.exports = {
   env: {
     BUILD_TIMESTAMP: Date.now().toString(),
   },
-  webpack(config, options) {
+  webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
       issuer: {

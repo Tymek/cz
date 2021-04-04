@@ -13,7 +13,6 @@ export type LinksSectionProps = SpotifyProps & OtherProps
 
 const LinksSection: FC<LinksSectionProps> = ({ ...props }) => (
   <div id="links" className="wrapper">
-    {console.log({ props })}
     <Spotify {...spotifySelector(props)} />
     {/* <StackOverflow /> */}
     {/* <GitHub /> */}

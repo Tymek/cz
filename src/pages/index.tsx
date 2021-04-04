@@ -17,7 +17,7 @@ const Home: NextPage<Props> = ({ linksProps }) => (
   </>
 )
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const linksProps = linksResolver()
   return {
     props: {

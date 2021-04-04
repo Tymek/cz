@@ -16,27 +16,30 @@ const Button: FC<ButtonProps> = ({
 }) => {
   const theme = useTheme()
 
-  const styles = useMemo(
-    () => ({
-      default: {},
-      primary: {
-        background: theme.colors.primary,
-        color: theme.colors.background,
-      },
-      secondary: {
-        background: theme.colors.secondary,
-        color: theme.colors.text,
-      },
-      tertiary: {
-        background: theme.colors.tertiary,
-        color: theme.colors.background,
-      },
-    }),
-    [theme],
-  )
+  const styles = useMemo(() => {
+    switch (style) {
+      case 'primary':
+        return {
+          background: theme.colors.primary,
+          color: theme.colors.background,
+        }
+      case 'secondary':
+        return {
+          background: theme.colors.secondary,
+          color: theme.colors.text,
+        }
+      case 'tertiary':
+        return {
+          background: theme.colors.tertiary,
+          color: theme.colors.background,
+        }
+      default:
+        return {}
+    }
+  }, [style, theme])
 
   return (
-    <a href={href} className="button" style={styles[style]}>
+    <a href={href} className="button" style={styles}>
       {Icon && <Icon aria-hidden="true" height="1em" className="icon" />}
       <span className="label">{children}</span>
       <style jsx>{`

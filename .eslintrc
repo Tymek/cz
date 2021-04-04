@@ -1,27 +1,56 @@
 {
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 11,
     "sourceType": "module"
   },
   "env": {
-    "es6": true,
     "browser": true,
-    "node": true,
     "cypress/globals": true,
-    "jest": true
+    "es6": true,
+    "jest": true,
+    "node": true
   },
-  "plugins": [
-    "cypress",
-    "security",
-    "import"
-  ],
+  "plugins": ["cypress", "import", "json", "security"],
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
     "plugin:security/recommended",
-    "plugin:import/errors"
+    "plugin:unicorn/recommended"
   ],
+  "ignorePatterns": ["coverage/**/*"],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
+  },
   "rules": {
-    "semi": ["warn", "never", { "beforeStatementContinuationChars": "always"}],
-    "comma-dangle": ["error", "always-multiline"]
-  }
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "arrow-parens": ["warn", "as-needed"],
+    "comma-dangle": ["error", "always-multiline"],
+    "import/extensions": "off",
+    "react/jsx-props-no-spreading": "off",
+    "semi": [
+      "warn",
+      "never",
+      {
+        "beforeStatementContinuationChars": "always"
+      }
+    ],
+    "unicorn/filename-case": "off",
+    "unicorn/prevent-abbreviations": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.ts", "*.test.ts"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }
